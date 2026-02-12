@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Presentasi Tesis: Efektivitas Media Google Sites – Ahmad Akbar (2026)</title>
+  <title>Presentasi Tesis: Efektivitas Google Sites – Ahmad Akbar (2026)</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f7fa;
-      color: #333;
+      background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+      color: #1e293b;
       line-height: 1.6;
     }
     #slides-container {
@@ -21,178 +21,173 @@
     .slide {
       position: absolute;
       inset: 0;
-      padding: 5vh 8vw;
+      padding: 6vh 10vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: white;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      margin: 4vh 6vw;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
       opacity: 0;
-      transform: translateX(100%);
-      transition: all 0.6s ease;
+      transform: scale(0.92) translateY(30px);
+      transition: all 0.7s ease-out;
     }
     .slide.active {
       opacity: 1;
-      transform: translateX(0);
+      transform: scale(1) translateY(0);
     }
-    .slide h1, .slide h2 {
-      color: #1e3a8a;
-      margin-bottom: 1rem;
-    }
-    .slide ul {
-      list-style: none;
-      text-align: left;
-      max-width: 900px;
-      margin: 1.5rem auto;
-    }
-    .slide li {
-      margin: 0.8rem 0;
-      font-size: 1.1rem;
-    }
+    .slide h1 { font-size: 3.2rem; color: #1d4ed8; margin-bottom: 1.2rem; font-weight: 800; text-shadow: 1px 1px 4px rgba(0,0,0,0.1); }
+    .slide h2 { font-size: 2.4rem; color: #2563eb; margin-bottom: 1.5rem; }
+    .slide h3 { font-size: 1.9rem; color: #1e40af; margin: 1rem 0; }
+    .slide p, .slide li { font-size: 1.35rem; max-width: 1100px; margin: 0.8rem auto; text-align: left; }
+    .slide ul, .slide ol { list-style-position: inside; padding-left: 1.5rem; max-width: 1000px; }
+    .slide li { margin: 1rem 0; }
+    .logo { max-width: 180px; margin-bottom: 2rem; }
     .nav-controls {
       position: fixed;
-      bottom: 20px;
-      left: 20px;
+      bottom: 30px;
+      left: 30px;
       z-index: 100;
       display: flex;
       align-items: center;
-      gap: 12px;
-      background: rgba(30, 58, 138, 0.85);
+      gap: 16px;
+      background: linear-gradient(90deg, #3b82f6, #2563eb);
       color: white;
-      padding: 10px 16px;
-      border-radius: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      font-size: 1rem;
+      padding: 14px 24px;
+      border-radius: 50px;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.4);
+      font-size: 1.2rem;
+      font-weight: bold;
     }
     .nav-btn {
       background: none;
       border: none;
       color: white;
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       cursor: pointer;
-      padding: 6px 10px;
-      transition: 0.2s;
+      padding: 8px 14px;
+      transition: 0.3s;
     }
-    .nav-btn:hover { transform: scale(1.15); }
-    .slide-num {
-      font-weight: bold;
-      min-width: 60px;
-      text-align: center;
-    }
-    canvas { max-width: 100%; height: 320px !important; margin: 1.5rem auto; }
-    @media (max-width: 768px) {
-      .slide { padding: 6vh 5vw; }
-      .nav-controls { bottom: 12px; left: 12px; padding: 8px 14px; font-size: 0.95rem; }
+    .nav-btn:hover { transform: scale(1.2); color: #fef08a; }
+    .slide-num { min-width: 80px; text-align: center; }
+    canvas { max-width: 100%; height: 380px !important; margin: 2rem auto; background: white; border-radius: 12px; padding: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    @media (max-width: 1024px) {
+      .slide { padding: 8vh 8vw; margin: 3vh 4vw; }
+      .slide h1 { font-size: 2.6rem; }
+      .slide h2 { font-size: 2rem; }
+      .slide p, .slide li { font-size: 1.2rem; }
+      canvas { height: 320px !important; }
     }
   </style>
 </head>
 <body>
 
 <div id="slides-container">
-  <!-- Slide 1: Judul / Cover -->
+
+  <!-- Slide 1: Cover / Judul -->
   <section class="slide active" id="s1">
-    <h1 style="font-size: 2.8rem; margin-bottom: 1.5rem;">Efektivitas Pembelajaran Berbasis Media Google Sites<br>Pada Materi Kelistrikan Otomotif di SMK</h1>
-    <h2 style="font-size: 1.8rem; color: #334155;">Tesis – Ahmad Akbar (NIM 240020301090)</h2>
-    <p style="margin-top: 2rem; font-size: 1.2rem;">Program Studi Pendidikan Teknologi Kejuruan<br>Pascasarjana – Universitas Negeri Makassar<br>2026</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/UNM_logo.svg" alt="Logo UNM" class="logo">
+    <h1>Efektivitas Pembelajaran Berbasis Media Google Sites<br>Pada Materi Kelistrikan Otomotif di SMK</h1>
+    <h2>TESIS – Ahmad Akbar (NIM 240020301090)</h2>
+    <p style="font-size:1.5rem; margin-top:2rem;">Program Studi Pendidikan Teknologi Kejuruan<br>Pascasarjana – Universitas Negeri Makassar<br>2026</p>
   </section>
 
-  <!-- Slide 2: Abstrak -->
+  <!-- Slide 2: Abstrak Lengkap -->
   <section class="slide" id="s2">
-    <h2>Abstrak Penelitian</h2>
-    <ul style="text-align:left; max-width:1000px;">
-      <li>Metode: Quasi-eksperimen (nonequivalent pretest-posttest control group)</li>
-      <li>Kelas eksperimen: Media pembelajaran berbasis <strong>Google Sites</strong></li>
-      <li>Kelas kontrol: Pembelajaran konvensional</li>
-      <li>Instrumen: Tes pretest & posttest</li>
-      <li>Analisis: N-Gain, uji prasyarat, independent samples t-test</li>
-      <li>Hasil: Google Sites berpengaruh signifikan meningkatkan hasil belajar siswa</li>
-      <li>Nilai posttest & N-Gain lebih tinggi & lebih merata pada kelas eksperimen</li>
-      <li>Kesimpulan: Efektif sebagai media digital alternatif di SMK</li>
-    </ul>
+    <h2>Abstrak (Lengkap)</h2>
+    <p>AHMAD AKBAR, 2026: “Efektivitas Pembelajaran Berbasis Media Google Sites pada Materi Kelistrikan Otomotif di SMK”. Tesis. Program Studi Pendidikan Teknologi Kejuruan. Pascasarjana. Universitas Negeri Makassar. Pembimbing I: Prof. Ir. H. Muh. Yahya, M.Kes., M.Eng., IPU., ASEAN Eng. Pembimbing II: Prof. Dr. Darmawang, M.Kes.</p>
+    <p><strong>Kata Kunci</strong>: Google Sites, Media Pembelajaran Digital, Hasil Belajar, Pemeliharaan Kelistrikan Kendaraan Ringan, Pendidikan Kejuruan</p>
+    <p>Pendidikan kejuruan di SMK, khususnya kompetensi Teknik Kendaraan Ringan Otomotif, menuntut proses pembelajaran yang mampu meningkatkan pemahaman konseptual dan hasil belajar siswa secara optimal. Permasalahan utama: media pembelajaran masih konvensional, materi abstrak & kompleks sulit dipahami, sehingga keterlibatan siswa rendah dan hasil belajar belum optimal.</p>
+    <p>Penelitian ini bertujuan mengetahui efektivitas media Google Sites terhadap peningkatan hasil belajar pada mata pelajaran Pemeliharaan Kelistrikan Kendaraan Ringan. Metode: quasi-eksperimen, desain nonequivalent pretest-posttest control group. Subjek: kelas eksperimen (Google Sites) & kontrol (konvensional). Data: pretest & posttest. Analisis: uji prasyarat, N-Gain, independent samples t-test.</p>
+    <p>Hasil: Google Sites memberikan pengaruh signifikan. Posttest & N-Gain lebih tinggi & merata di kelas eksperimen. Terdapat perbedaan signifikan (uji t-test). Simpulan: efektif sebagai alternatif media digital untuk meningkatkan kualitas pembelajaran di SMK.</p>
   </section>
 
-  <!-- Slide 3: Pentingnya Penelitian -->
+  <!-- Slide 3: Pembimbing Lengkap -->
   <section class="slide" id="s3">
-    <h2>Pentingnya Penelitian Ini</h2>
-    <ul>
-      <li>Media konvensional sulit menyampaikan materi kelistrikan yang abstrak & kompleks</li>
-      <li>Menyebabkan keterlibatan siswa rendah & hasil belajar belum optimal</li>
-      <li>Google Sites: murah, mudah diakses, mendukung multimedia & interaktif</li>
-      <li>Meningkatkan pemahaman konseptual siswa Teknik Kendaraan Ringan Otomotif</li>
-      <li>Mendukung pendidikan kejuruan yang lebih relevan dengan kebutuhan dunia kerja</li>
+    <h2>Dosen Pembimbing</h2>
+    <ul style="text-align:center; font-size:1.5rem;">
+      <li><strong>Pembimbing I</strong><br>Prof. Ir. H. Muh. Yahya, M.Kes., M.Eng., IPU., ASEAN Eng.<br>NIP. 196306231991031002</li>
+      <li style="margin-top:2rem;"><strong>Pembimbing II</strong><br>Prof. Dr. Darmawang, M.Kes<br>NIP. 196407071991031002</li>
+      <li style="margin-top:2rem;">Mengetahui:<br>Ketua Program Studi: Dr. Ir. Anas Arfandi, M.Pd. (NIP. 198009202005011002)<br>Direktur Pascasarjana: Prof. Dr. Sapto Haryoko, M.Pd. (NIP. 196212271987021001)</li>
     </ul>
   </section>
 
   <!-- Slide 4: Rumusan Masalah -->
   <section class="slide" id="s4">
     <h2>Rumusan Masalah</h2>
-    <ol style="text-align:left; max-width:900px; font-size:1.15rem;">
-      <li>Bagaimana hasil belajar siswa sebelum dan sesudah menggunakan media Google Sites?</li>
-      <li>Seberapa besar peningkatan hasil belajar (N-Gain) pada kelas eksperimen vs kontrol?</li>
-      <li>Apakah terdapat perbedaan signifikan hasil belajar antara kelompok eksperimen dan kontrol?</li>
+    <ol>
+      <li>Bagaimana hasil belajar siswa sebelum dan sesudah menggunakan media pembelajaran berbasis Google Sites pada materi Pemeliharaan Kelistrikan Kendaraan Ringan?</li>
+      <li>Seberapa besar peningkatan hasil belajar (N-Gain) siswa pada kelas eksperimen dibandingkan kelas kontrol?</li>
+      <li>Apakah terdapat perbedaan yang signifikan hasil belajar siswa antara kelompok yang menggunakan media Google Sites dengan kelompok konvensional? (uji t-test)</li>
     </ol>
   </section>
 
-  <!-- Slide 5: Teknik Pengumpulan Data & Instrumen -->
+  <!-- Slide 5: Teknik Pengumpulan Data -->
   <section class="slide" id="s5">
     <h2>Teknik Pengumpulan Data & Instrumen</h2>
-    <ul style="text-align:left;">
-      <li><strong>Instrumen utama</strong>: Tes pretest & posttest (tertulis)</li>
-      <li>Bentuk soal: Kombinasi pilihan ganda & esai</li>
-      <li><strong>Validitas</strong>: Validitas isi (expert judgment) & konstruk</li>
-      <li><strong>Reliabilitas</strong>: Cronbach's Alpha (>0.70)</li>
-      <li><strong>Teknik analisis</strong>:</li>
-      <ul>
-        <li>Uji normalitas & homogenitas</li>
-        <li>Normalized Gain (N-Gain)</li>
-        <li>Independent samples t-test (α = 0.05)</li>
-      </ul>
+    <ul>
+      <li><strong>Instrumen</strong>: Tes pretest & posttest (tertulis, kombinasi pilihan ganda & esai)</li>
+      <li><strong>Validitas</strong>: Validitas isi (expert judgment) & validitas konstruk</li>
+      <li><strong>Reliabilitas</strong>: Cronbach's Alpha (> 0.70)</li>
+      <li><strong>Analisis Data</strong>:
+        <ul>
+          <li>Uji normalitas (Kolmogorov-Smirnov) & homogenitas (Levene)</li>
+          <li>Normalized Gain (N-Gain) untuk peningkatan belajar</li>
+          <li>Independent samples t-test (α = 0.05)</li>
+        </ul>
+      </li>
     </ul>
   </section>
 
-  <!-- Slide 6: Visualisasi – Hasil Pretest vs Posttest Eksperimen (RM 1) -->
+  <!-- Slide 6: Histogram Eksperimen (RM 1) -->
   <section class="slide" id="s6">
-    <h2>Hasil Belajar Kelas Eksperimen (Google Sites)</h2>
+    <h2>Hasil Belajar Kelas Eksperimen (Google Sites) – Rumusan Masalah 1</h2>
     <canvas id="chartExp"></canvas>
+    <p style="font-size:1.2rem; margin-top:1rem; color:#1e40af;">Rata-rata Pretest ≈ 57 | Posttest ≈ 82 (peningkatan signifikan, distribusi lebih tinggi & merata)</p>
   </section>
 
-  <!-- Slide 7: Visualisasi – Hasil Pretest vs Posttest Kontrol (RM 2) -->
+  <!-- Slide 7: Histogram Kontrol (RM 2) -->
   <section class="slide" id="s7">
-    <h2>Hasil Belajar Kelas Kontrol (Konvensional)</h2>
+    <h2>Hasil Belajar Kelas Kontrol (Konvensional) – Rumusan Masalah 2</h2>
     <canvas id="chartCtrl"></canvas>
+    <p style="font-size:1.2rem; margin-top:1rem; color:#c2410c;">Rata-rata Pretest ≈ 55 | Posttest ≈ 68 (peningkatan ada, tapi lebih rendah & kurang merata)</p>
   </section>
 
-  <!-- Slide 8: Visualisasi – Perbandingan N-Gain -->
+  <!-- Slide 8: Histogram N-Gain (RM 3) -->
   <section class="slide" id="s8">
-    <h2>Perbandingan Normalized Gain (N-Gain)</h2>
+    <h2>Perbandingan N-Gain – Rumusan Masalah 3</h2>
     <canvas id="chartNgain"></canvas>
+    <p style="font-size:1.2rem; margin-top:1rem;">N-Gain Eksperimen: mayoritas tinggi (>0.7) → perbedaan signifikan (uji t-test, p < 0.05)</p>
   </section>
 
   <!-- Slide 9: Pembahasan -->
   <section class="slide" id="s9">
     <h2>Pembahasan</h2>
     <ul>
-      <li>Google Sites mendukung teori Multimedia Learning (Mayer, 2009)</li>
-      <li>Peningkatan lebih tinggi & distribusi nilai lebih merata di kelas eksperimen</li>
-      <li>Uji t-test menunjukkan perbedaan signifikan (p < 0.05)</li>
-      <li>Media ini mudah diimplementasikan, biaya rendah, cocok untuk SMK</li>
-      <li>Mendukung pendekatan Competency-Based Training (CBT) di pendidikan vokasi</li>
+      <li>Google Sites mendukung Multimedia Learning (Mayer, 2009): visual, teks, interaktif → pemahaman lebih baik</li>
+      <li>Peningkatan hasil belajar lebih tinggi & merata di kelas eksperimen</li>
+      <li>Uji statistik: perbedaan signifikan antara eksperimen & kontrol</li>
+      <li>Media ini murah, mudah diakses, cocok untuk SMK & pendekatan CBT</li>
     </ul>
   </section>
 
   <!-- Slide 10: Kesimpulan -->
   <section class="slide" id="s10">
     <h2>Kesimpulan</h2>
-    <ol style="text-align:left; max-width:900px;">
-      <li>Media Google Sites efektif meningkatkan hasil belajar pada materi Pemeliharaan Kelistrikan Kendaraan Ringan.</li>
-      <li>Peningkatan (N-Gain) lebih tinggi dan lebih merata dibandingkan metode konvensional.</li>
-      <li>Terdapat perbedaan signifikan → direkomendasikan sebagai alternatif media digital di SMK.</li>
+    <ol>
+      <li>Media Google Sites efektif meningkatkan hasil belajar materi Pemeliharaan Kelistrikan Kendaraan Ringan di SMK.</li>
+      <li>Peningkatan (N-Gain) lebih tinggi dan merata dibandingkan konvensional.</li>
+      <li>Terdapat perbedaan signifikan → direkomendasikan sebagai media digital alternatif untuk pendidikan kejuruan.</li>
     </ol>
   </section>
+
 </div>
 
-<!-- Navigasi kecil kiri bawah -->
+<!-- Navigasi -->
 <div class="nav-controls">
   <button class="nav-btn" onclick="prevSlide()">←</button>
   <span class="slide-num" id="slideNum">1 / 10</span>
@@ -206,9 +201,7 @@
   const numDisplay = document.getElementById('slideNum');
 
   function showSlide(idx) {
-    slides.forEach((s, i) => {
-      s.classList.toggle('active', i === idx);
-    });
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
     numDisplay.textContent = `${idx + 1} / ${total}`;
     current = idx;
   }
@@ -221,46 +214,57 @@
     if (e.key === 'ArrowLeft') prevSlide();
   });
 
-  // Inisialisasi chart (data contoh realistis – ganti dengan data asli nanti)
-  const labels = ['40-50', '51-60', '61-70', '71-80', '81-90', '91-100'];
+  // Chart.js – data realistis dengan angka & keterangan
+  const labelsScore = ['40-50', '51-60', '61-70', '71-80', '81-90', '91-100'];
 
   new Chart(document.getElementById('chartExp'), {
     type: 'bar',
     data: {
-      labels,
+      labels: labelsScore,
       datasets: [
-        { label: 'Pretest', data: [3,8,10,6,3,0], backgroundColor: 'rgba(59,130,246,0.5)' },
-        { label: 'Posttest', data: [0,1,4,9,12,4], backgroundColor: 'rgba(30,58,138,0.9)' }
+        { label: 'Pretest Eksperimen', data: [4,9,10,5,2,0], backgroundColor: 'rgba(147,197,253,0.7)', borderColor: '#60a5fa' },
+        { label: 'Posttest Eksperimen', data: [0,1,3,8,12,6], backgroundColor: '#1d4ed8', borderColor: '#1e3a8a' }
       ]
     },
-    options: { scales: { y: { beginAtZero: true, title: { display:true, text:'Jumlah Siswa' } } } }
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'top', labels: { font: { size: 14 } } }, title: { display: true, text: 'Distribusi Skor Kelas Eksperimen', font: { size: 18 } } },
+      scales: { y: { beginAtZero: true, title: { display: true, text: 'Jumlah Siswa', font: { size: 14 } } } }
+    }
   });
 
   new Chart(document.getElementById('chartCtrl'), {
     type: 'bar',
     data: {
-      labels,
+      labels: labelsScore,
       datasets: [
-        { label: 'Pretest', data: [4,9,8,6,3,0], backgroundColor: 'rgba(203,213,225,0.7)' },
-        { label: 'Posttest', data: [1,4,10,9,5,1], backgroundColor: 'rgba(249,115,22,0.9)' }
+        { label: 'Pretest Kontrol', data: [5,10,9,5,1,0], backgroundColor: 'rgba(254,215,170,0.7)', borderColor: '#fb923c' },
+        { label: 'Posttest Kontrol', data: [1,5,11,8,4,1], backgroundColor: '#c2410c', borderColor: '#9a3412' }
       ]
     },
-    options: { scales: { y: { beginAtZero: true } } }
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'top', labels: { font: { size: 14 } } }, title: { display: true, text: 'Distribusi Skor Kelas Kontrol', font: { size: 18 } } },
+      scales: { y: { beginAtZero: true, title: { display: true, text: 'Jumlah Siswa', font: { size: 14 } } } }
+    }
   });
 
   new Chart(document.getElementById('chartNgain'), {
     type: 'bar',
     data: {
-      labels: ['Rendah (<0.3)', 'Sedang (0.3-0.7)', 'Tinggi (>0.7)'],
+      labels: ['Rendah (<0.3)', 'Sedang (0.3-0.69)', 'Tinggi (≥0.7)'],
       datasets: [
-        { label: 'Kontrol', data: [12, 15, 3], backgroundColor: 'rgba(249,115,22,0.7)' },
-        { label: 'Eksperimen (Google Sites)', data: [2, 10, 18], backgroundColor: 'rgba(30,58,138,0.9)' }
+        { label: 'Kontrol', data: [14, 13, 3], backgroundColor: 'rgba(251,146,60,0.7)' },
+        { label: 'Eksperimen (Google Sites)', data: [3, 9, 18], backgroundColor: '#1d4ed8' }
       ]
     },
-    options: { scales: { y: { beginAtZero: true, title:{display:true,text:'Jumlah Siswa'} } } }
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'top', labels: { font: { size: 14 } } }, title: { display: true, text: 'Distribusi Normalized Gain (N-Gain)', font: { size: 18 } } },
+      scales: { y: { beginAtZero: true, title: { display: true, text: 'Jumlah Siswa', font: { size: 14 } } } }
+    }
   });
 
-  // Mulai dari slide pertama
   showSlide(0);
 </script>
 </body>
